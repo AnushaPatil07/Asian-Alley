@@ -326,23 +326,82 @@ body::before {
   .service-3, .service-6 { flex: 1 1 230px; height: 230px; }
 }
 
+
 @media screen and (max-width: 768px) {
-  .services-grid {
-    gap: 15px;
+
+  .services {
+    padding: 50px 12px;
   }
-  .service-card { flex: 1 1 100%; height: 220px; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 70px;
+    gap: 12px;
+  }
+
+  .service-card {
+    height: auto;
+    transform: none;
+    border-radius: 0px;
+  }
+
+  /* RANDOM MASONRY SHAPES */
+  .service-1 {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+
+  .service-2 {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .service-3 {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+
+  .service-4 {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+
+  .service-5 {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .service-6 {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
 }
 
-@media screen and (max-width: 480px) {
-  .service-card { height: 180px; }
-  .service-card h3 { font-size: 1.2rem; }
+.service-card .overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.15)
+  );
 }
+
+@media screen and (max-width: 768px) {
+  .service-card:hover {
+    transform: none;
+  }
+}
+
 
 
 /* ================= PROCESS SECTION ================= */
 .process {
-  margin-bottom: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 100%;
   padding: 80px 20px;
   text-align: center;
@@ -564,16 +623,77 @@ body::before {
 }
 
 @media screen and (max-width: 768px) {
-  .portfolio-grid {
-    gap: 15px;
+
+  .portfolio {
+    padding: 50px 12px;
   }
-  .portfolio-item { flex: 1 1 100%; height: 220px; }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 75px;
+    gap: 12px;
+  }
+
+  .portfolio-item {
+    height: auto;
+    transform: none;
+    border-radius: 16px;
+  }
+
+  /* DIFFERENT RANDOM SHAPES (not same as services) */
+
+  .portfolio-1 {
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+
+  .portfolio-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .portfolio-3 {
+    grid-column: span 5;
+    grid-row: span 2;
+  }
+
+  .portfolio-4 {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  .portfolio-5 {
+    grid-column: span 3;
+    grid-row: span 2;
+  }
+
+  .portfolio-6 {
+    grid-column: span 5;
+    grid-row: span 3;
+  }
+
+  .portfolio-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .portfolio-item p {
+    font-size: 0.9rem;
+  }
 }
 
-@media screen and (max-width: 480px) {
-  .portfolio-item { height: 180px; }
-  .portfolio-item h3 { font-size: 1.3rem; }
-  .portfolio-item p { font-size: 0.95rem; }
+.portfolio-item .overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.2)
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-item:hover {
+    transform: none;
+  }
 }
 
 
