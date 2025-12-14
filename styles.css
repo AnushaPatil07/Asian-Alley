@@ -230,7 +230,9 @@ body::before {
 
 /* ================= SERVICES SECTION ================= */
 .services {
-  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 150%;
   padding: 80px 20px;
   text-align: center;
   background-color: #f9f9f9;
@@ -339,7 +341,9 @@ body::before {
 
 /* ================= PROCESS SECTION ================= */
 .process {
-  width: 100%;
+  margin-top: 10px;
+  mrgin-bottom: 10px;
+  width: 150%;
   padding: 80px 20px;
   text-align: center;
   background-color: #f9f9f9;
@@ -459,7 +463,9 @@ body::before {
 
 /* ================= PORTFOLIO SECTION ================= */
 .portfolio {
-  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150%;
   padding: 80px 20px;
   text-align: center;
   background-color: #f9f9f9;
@@ -575,7 +581,9 @@ body::before {
 /* -----------------------WHY US -----------------------------------------*/
 /* WHY US SECTION WITH IMAGE */
 .whyus {
-  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150%;
   padding: 80px 20px;
   text-align: left;
   background-color: #f9f9f9;
