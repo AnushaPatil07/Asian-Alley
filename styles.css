@@ -341,8 +341,8 @@ body::before {
 
 /* ================= PROCESS SECTION ================= */
 .process {
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
   width: 100%;
   padding: 80px 20px;
   text-align: center;
