@@ -1,0 +1,790 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  line-height: 1.6;
+
+  /* Global fixed background */
+  background-image: url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HERO + HEADER ================= */
+.hero-header {
+  position: relative;
+  background-image: url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content */
+  padding: 0 50px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55); /* darker overlay for readability */
+  z-index: 1;
+}
+
+
+/* ================= NAVIGATION ================= */
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  z-index: 10; /* above overlay */
+}
+
+.hero-nav .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.hero-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.hero-nav .nav-list a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-nav .nav-list a:hover {
+  color: #ffd700;
+}
+
+/* Hamburger container - hidden by default */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 60;
+}
+
+/* Hamburger lines */
+.mobile-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Animate to X when active */
+.mobile-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ================= HERO CONTENT ================= */
+.hero-content {
+  position: relative;
+  z-index: 5; /* above overlay */
+  max-width: 700px;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* Primary button */
+.hero-content .btn-primary {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  background-color: #242f46;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content .btn-primary:hover {
+  background-color: #767980;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 1024px) {
+  .hero-header {
+    padding: 0 30px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-header {
+    padding: 0 20px;
+  }
+
+  /* Hide nav list by default */
+  .hero-nav .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0,0,0,0.85);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    z-index: 50;
+  }
+
+  /* Show nav when active */
+  .hero-nav .nav-list.active {
+    display: flex;
+  }
+
+  /* Show hamburger menu */
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-content .btn-primary {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+
+
+/* ================= SERVICES SECTION ================= */
+.services {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.services .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Masonry-like Grid */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Service Card - different sizes */
+.service-card {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Different sizes for random arrangement */
+.service-1, .service-4 { flex: 1 1 300px; height: 280px; }
+.service-2, .service-5 { flex: 1 1 220px; height: 220px; }
+.service-3, .service-6 { flex: 1 1 250px; height: 250px; }
+
+/* Background images */
+.service-1 { background: url("images/socialmedia.jpg") center/cover no-repeat; }
+.service-2 { background: url("images/SEOservices.jpg") center/cover no-repeat; }
+.service-3 { background: url("images/website.jpg") center/cover no-repeat; }
+.service-4 { background: url("images/droneshoot.jpg") center/cover no-repeat; }
+.service-5 { background: url("images/ad.jpg") center/cover no-repeat; }
+.service-6 { background: url("images/marketing.jpg") center/cover no-repeat; }
+
+/* Overlay */
+.service-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 0px;
+  transition: background 0.3s ease;
+}
+
+.service-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Hover effect */
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.service-card:hover .overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+
+.service-card:hover h3 {
+  transform: translateY(-10px);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .service-1, .service-4 { flex: 1 1 280px; height: 250px; }
+  .service-2, .service-5 { flex: 1 1 200px; height: 200px; }
+  .service-3, .service-6 { flex: 1 1 230px; height: 230px; }
+}
+
+@media screen and (max-width: 768px) {
+  .services-grid {
+    gap: 15px;
+  }
+  .service-card { flex: 1 1 100%; height: 220px; }
+}
+
+@media screen and (max-width: 480px) {
+  .service-card { height: 180px; }
+  .service-card h3 { font-size: 1.2rem; }
+}
+
+
+/* ================= PROCESS SECTION ================= */
+.process {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.process h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Step Boxes */
+.steps-grid .step {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Different Backgrounds for each step */
+.step-1 { background: url("images/discovery.jpg") center/cover no-repeat; }
+.step-2 { background: url("images/stratergy.jpg") center/cover no-repeat; }
+.step-3 { background: url("images/execution.jpg") center/cover no-repeat; }
+.step-4 { background: url("images/optimization.jpg") center/cover no-repeat; }
+
+/* Dark overlay */
+.steps-grid .step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+/* Ensure text is above overlay */
+.steps-grid .step > * {
+  position: relative;
+  z-index: 1;
+}
+
+.steps-grid .step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* Step Number */
+.steps-grid span {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+/* Step Title */
+.steps-grid h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Step Description */
+.steps-grid p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 1024px) {
+  .process h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .steps-grid {
+    gap: 20px;
+  }
+  .steps-grid .step {
+    padding: 25px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .process h2 {
+    font-size: 1.8rem;
+  }
+  .steps-grid span {
+    font-size: 1.3rem;
+  }
+  .steps-grid h3 {
+    font-size: 1.1rem;
+  }
+  .steps-grid p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ================= PORTFOLIO SECTION ================= */
+.portfolio {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.portfolio .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Masonry-like Flex Grid */
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Portfolio Item - random sizes */
+.portfolio-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Randomized widths & heights */
+.portfolio-1, .portfolio-4 { flex: 1 1 300px; height: 280px; }
+.portfolio-2, .portfolio-5 { flex: 1 1 220px; height: 220px; }
+.portfolio-3, .portfolio-6 { flex: 1 1 250px; height: 250px; }
+
+/* Background images */
+.portfolio-1 { background: url("images/portfolio-1.jpg") center/cover no-repeat; }
+.portfolio-2 { background: url("images/portfolio-2.jpg") center/cover no-repeat; }
+.portfolio-3 { background: url("images/portfolio-3.jpg") center/cover no-repeat; }
+.portfolio-4 { background: url("images/portfolio-4.jpg") center/cover no-repeat; }
+.portfolio-5 { background: url("images/portfolio-5.jpg") center/cover no-repeat; }
+.portfolio-6 { background: url("images/portfolio-6.jpg") center/cover no-repeat; }
+
+/* Overlay */
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.portfolio-item p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Hover effects */
+.portfolio-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .portfolio-1, .portfolio-4 { flex: 1 1 280px; height: 250px; }
+  .portfolio-2, .portfolio-5 { flex: 1 1 200px; height: 200px; }
+  .portfolio-3, .portfolio-6 { flex: 1 1 230px; height: 230px; }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-grid {
+    gap: 15px;
+  }
+  .portfolio-item { flex: 1 1 100%; height: 220px; }
+}
+
+@media screen and (max-width: 480px) {
+  .portfolio-item { height: 180px; }
+  .portfolio-item h3 { font-size: 1.3rem; }
+  .portfolio-item p { font-size: 0.95rem; }
+}
+
+
+
+/* -----------------------WHY US -----------------------------------------*/
+/* WHY US SECTION WITH IMAGE */
+.whyus {
+  width: 100%;
+  padding: 80px 20px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+.whyus-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.whyus-img img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.whyus-text {
+  max-width: 600px;
+}
+
+.whyus-text h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 14px;
+}
+
+.whyus-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact {
+  padding: 80px 20px;
+  text-align: left; 
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+  margin: 60px auto;
+}
+
+.contact .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff6b6b; /* Accent color for focus */
+  box-shadow: 0 0 10px rgba(255,107,107,0.3);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+  padding: 12px 25px; /* Smaller size */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  background: #ff6b6b; /* New button color */
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e55555;
+  transform: translateY(-2px);
+}
+
+/* Align button to left */
+.btn-left {
+  align-self: flex-start;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 60px 15px;
+    margin: 40px auto;
+  }
+  .contact-form {
+    gap: 15px;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  width: 100%;
+  background: #1f1f1f;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Links */
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+/* Layout */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Text */
+.footer-info p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Small icons next to text */
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 22px;
+  margin-top: 5px;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer-info p {
+    font-size: 0.9rem;
+  }
+
+  .footer-social img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+.service-card,
+.step,
+.portfolio-item {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255,255,255,0.08);
+}
+
