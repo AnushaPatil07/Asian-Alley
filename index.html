@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Asian Alley</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="hero-header">
+  <div class="hero-nav container">
+
+    <!-- LOGO IMAGE -->
+    <div class="logo">
+      <a href="#">
+        <img src="images/Artboard 2 copy@4x.png" alt="Asian Alley Logo">
+      </a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#whyus">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER -->
+    <div class="mobile-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content container">
+    <h1>Asian Alley — Crafting Digital Presence That Stands Out</h1>
+    <p>Specialized in Social Media Marketing, SEO, Web Design & Digital Advertising.</p>
+    <a href="#contact" class="btn-primary hero-btn">Grow With Us</a>
+  </div>
+</header>
+
+
+<!-- ========== SERVICES ========== -->
+<section id="services" class="section container">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="unified-grid">
+    <div class="card bg-service-1">
+      <h3>Social Media Marketing</h3>
+    </div>
+    <div class="card bg-service-2">
+      <h3>Content Creation For Social Media</h3>
+    </div>
+    <div class="card bg-service-3">
+      <h3>Website Designing</h3>
+    </div>
+    <div class="card bg-service-4">
+      <h3>Professional Drone Setup</h3>
+    </div>
+    <div class="card bg-service-5">
+      <h3>Professional Product Shoot</h3>
+    </div>
+    <div class="card bg-service-6">
+      <h3>Fashion Shoot</h3>
+    </div>
+    <div class="card bg-service-7">
+      <h3>Videography</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process" class="section container">
+  <h2 class="section-title">Our Process</h2>
+
+  <div class="unified-grid">
+    <div class="card bg-process-1">
+      <span>01</span>
+      <h3>Discovery</h3>
+      <p>Understand goals, audience, and metrics.</p>
+    </div>
+
+    <div class="card bg-process-2">
+      <span>02</span>
+      <h3>Strategy</h3>
+      <p>Define channels & messaging.</p>
+    </div>
+
+    <div class="card bg-process-3">
+      <span>03</span>
+      <h3>Execution</h3>
+      <p>Launch campaigns & track results.</p>
+    </div>
+
+    <div class="card bg-process-4">
+      <span>04</span>
+      <h3>Optimization</h3>
+      <p>Improve performance continuously.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO ========== -->
+<section id="portfolio" class="section container">
+  <h2 class="section-title">Our Portfolio</h2>
+
+  <div class="unified-grid">
+    <div class="card bg-portfolio-1">
+      <h3>Serene Homestay</h3>
+      <p>Branding & Social Media</p>
+    </div>
+
+    <div class="card bg-portfolio-2">
+      <h3>Social Media Growth</h3>
+      <p>Instagram Campaign</p>
+    </div>
+
+    <div class="card bg-portfolio-3">
+      <h3>SEO Project</h3>
+      <p>Search Optimization</p>
+    </div>
+
+    <div class="card bg-portfolio-4">
+      <h3>Drone Shoot</h3>
+      <p>Resort Promotion</p>
+    </div>
+
+    <div class="card bg-portfolio-5">
+      <h3>Paid Ads</h3>
+      <p>Lead Generation</p>
+    </div>
+
+    <div class="card bg-portfolio-6">
+      <h3>Marketing Strategy</h3>
+      <p>Brand Growth</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="whyus" class="whyus container">
+  <div class="whyus-content">
+
+    <div class="whyus-img">
+      <img src="images/aboutus.jpg" alt="Why Choose Us">
+    </div>
+
+    <div class="whyus-text">
+      <h2>Why Choose Us</h2>
+      <p>
+        We help brands grow with strategy backed by real data. With expert insights, creative content, and
+        transparent reporting, we drive results that matter — from engagement to conversions and beyond.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact container">
+  <h2 class="section-title">Get Your Free Audit</h2>
+  <p class="contact-subtitle">
+    Fill out the form below and our team will get back to you shortly.
+  </p>
+
+  <form class="contact-form">
+
+    <!-- Name -->
+    <input 
+      type="text"
+      placeholder="Your Name"
+      required
+      pattern="[A-Za-z\s]+"
+      title="Name should contain only letters and spaces"
+    >
+
+    <!-- Phone -->
+    <input 
+      type="tel"
+      placeholder="Your Phone Number"
+      required
+      pattern="[6-9]{1}[0-9]{9}"
+      title="Enter a valid 10-digit Indian mobile number"
+    >
+
+    <!-- Email -->
+    <input 
+      type="email"
+      placeholder="Your Email"
+      required
+    >
+
+    <!-- Message (MAX LENGTH ONLY HERE) -->
+    <textarea
+      placeholder="Tell us your goals (max 250 characters)"
+      required
+      maxlength="250"
+    ></textarea>
+
+    <button type="submit" class="btn-primary btn-left">
+      Send Request
+    </button>
+
+  </form>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-info">
+      <p>© 2025 Asian Alley. All rights reserved.</p>
+
+      <p>
+        <a href="tel:+9123456667">
+          <img src="images/contact.jpg.png" alt="Phone" class="footer-icon">
+          +91 23456667
+        </a>
+        |
+        <a href="mailto:asianalley@gmail.com">
+          <img src="images/mail.jpg.png" alt="Email" class="footer-icon">
+          asianalley@gmail.com
+        </a>
+        |
+        <a href="https://maps.google.com/?q=123+Business+Street+Mumbai+India" target="_blank">
+          <img src="images/map.jpg.png" alt="Location" class="footer-icon">
+          Mumbai, India
+        </a>
+      </p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+        <img src="images/instagram.jpg.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <img src="images/facebook.jpg.png" alt="Facebook">
+      </a>
+      <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+        <img src="images/youtube.jpg.png" alt="YouTube">
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
